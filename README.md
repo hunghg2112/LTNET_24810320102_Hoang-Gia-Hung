@@ -34,8 +34,10 @@
 - **SqlTransaction Bán hàng:** Mở giao dịch đồng thời chèn `HoaDon`, `ChiTietHoaDon`, trừ `SoLuongTon` và cộng `DiemTichLuy` cho khách hàng (Rollback nếu không đủ hàng tồn kho).
 - **Báo cáo Thống kê Nâng cao:** Sử dụng `ExecuteScalar` tính tổng doanh thu trong ngày/tháng và `SqlDataReader` hiển thị danh sách Top 5 sản phẩm bán chạy nhất.
 - **Phòng chống SQL Injection 100%:** Sử dụng `SqlParameter` cho toàn bộ các thao tác truy vấn và tìm kiếm sản phẩm theo mã/tên với ký tự đại diện `%`.
-
+![Giao diện Bài 6_1](./img/6_1.png)
 ### 2. Bài 6.2: Hệ Thống Quản Lý Nhân Sự & Tính Lương (HRMDB)
 - **Chấm công ngắt kết nối (Disconnected Model):** Sử dụng `SqlDataAdapter`, `DataSet/DataTable` và `SqlCommandBuilder` nạp dữ liệu chấm công hàng tháng, cho phép chỉnh sửa số ngày công và giờ OT trực tiếp trên `DataGridView` rồi gọi `adapter.Update()` để đồng bộ CSDL.
 - **Tính & Chốt Lương (SqlTransaction):** Áp dụng công thức tính lương `ThucLinh = (LuongCoBan * HeSoLuong / 22) * SoNgayCong + (SoGioOT * 50,000)`. Bọc quy trình chốt lương toàn bộ nhân viên trong `SqlTransaction` để ghi nhận chính thức vào CSDL.
 - **Kiến trúc 3-Tier chuẩn hóa:** Phân tách mã nguồn rõ ràng thành các lớp `DTO`, `DAL`, `BUS` và `GUI`, kiểm soát dữ liệu trùng lặp (trùng số CCCD) bằng cơ chế bắt ngoại lệ `SqlException`.
+![Giao diện Bài 6_2](./img/6_2.png)
+
